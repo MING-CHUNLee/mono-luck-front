@@ -36,29 +36,54 @@ function App() {
   const [phone, setPhone] = React.useState("");
   const [helperText, setHelperText] = React.useState("請輸入您的手機號碼");
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    const json = JSON.stringify({ phone: phone });
+  const handleClick = (e) => {
+    e.preventDefault();
+    let jsonphone;
+    if (
+      !(phone.startsWith("09") && phone.length === 10) &&
+      !(phone.startsWith("8869") && phone.length === 12)
+    ) {
+      setError(true);
+      setHelperText("手機格式錯誤");
+    }
+    if (phone.startsWith("09") && phone.length === 10) {
+      jsonphone = phone;
+    }
+    if (phone.startsWith("8869") && phone.length === 12) {
+      jsonphone = "0" + phone.slice(3);
+      setPhone(jsonphone);
+    }
+    if (jsonphone.startsWith("09") && jsonphone.length === 10) {
+      e.preventDefault();
+      // for (let i = 0; i < priority.length; i++) {
+      //   if (devices[i + 1] == "") {
+      //     priority += devices[i];
+      //   } else {
+      //     priority += devices[i] + ",";
+      //   }
+      // }
+      const json = JSON.stringify({ phone: jsonphone });
 
-    //console.log("phone:" + phone +"number:" + devices);
-    axios
-      .post("api/Locker", JSON.parse(json))
-      .then((response) => {
-        if (response.data == "0") {
-          navigate("/Noyetopen");
-        } else {
-          if (response.data == "1") {
-            setError(true);
-            setHelperText("您尚未登記過鎖櫃");
+      //console.log("phone:" + phone +"number:" + devices);
+      axios
+        .post("api/Locker", JSON.parse(json))
+        .then((response) => {
+          if (response.data == "0") {
+            navigate("/Noyetopen");
           } else {
-            setError(true);
-            setHelperText("非暢遊會員,無法登記鎖櫃!");
+            if (response.data == "1") {
+              setError(true);
+              setHelperText("非暢遊會員,無法登記鎖櫃!");
+            } else {
+              setError(true);
+              setHelperText("您已登記過鎖櫃");
+            }
           }
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
   return (
     <div id="SEARCH">

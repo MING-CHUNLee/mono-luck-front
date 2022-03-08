@@ -156,10 +156,10 @@ function App() {
       axios
         .post("api/Registrations", JSON.parse(json))
         .then((response) => {
-          if (response.data === "success") {
+          if (response.data == "success") {
             navigate("/Complete");
           } else {
-            if (response.data === "非暢遊會員,無法登記鎖櫃!") {
+            if (response.data == "非暢遊會員,無法登記鎖櫃!") {
               setError(true);
               setHelperText("非暢遊會員,無法登記鎖櫃!");
             } else {
