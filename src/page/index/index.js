@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button, Stack } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import SearchIcon from "@mui/icons-material/Search";
+import { useNavigate } from "react-router-dom";
 import {
   Dialog,
   DialogActions,
@@ -14,18 +15,20 @@ import {
 
 function Homepage() {
   const [Dialogopen, setDialogOpen] = React.useState(false);
-  const [LinkTo, setLinkTo] = React.useState("/Luck");
+  const navigate = useNavigate();
   const handleClose = () => {
     setDialogOpen(false);
   };
 
   const handleClick = (e) => {
+    e.preventDefault();
     let today = new Date();
-    let endDate = "2022-03-13 23:59:59";
+    let endDate = "2022/03/13 23:59:59";
 
     if (Date.parse(today).valueOf() > Date.parse(endDate).valueOf()) {
-      e.preventDefault();
       setDialogOpen(true);
+    } else {
+      navigate("/Luck");
     }
   };
 
@@ -47,19 +50,17 @@ function Homepage() {
         <div className="button">
           <Stack spacing={1}>
             <Stack direction="row" spacing={2}>
-              <Link to={LinkTo} className="link">
-                <Button
-                  variant="contained"
-                  className="button_r"
-                  onClick={(e) => {
-                    handleClick(e);
-                  }}
-                  style={{ background: "#02A2EE", boxShadow: "none" }}
-                >
-                  <EditIcon />
-                  開始登記
-                </Button>
-              </Link>
+              <Button
+                variant="contained"
+                className="button_r"
+                onClick={(e) => {
+                  handleClick(e);
+                }}
+                style={{ background: "#02A2EE", boxShadow: "none" }}
+              >
+                <EditIcon />
+                開始登記
+              </Button>
             </Stack>
             <Stack direction="row" spacing={2}>
               <Link to="/Inquiry" className="link">

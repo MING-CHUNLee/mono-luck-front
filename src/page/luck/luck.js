@@ -113,7 +113,7 @@ function App() {
       !(phone.startsWith("8869") && phone.length === 12)
     ) {
       setError(true);
-      setHelperText("手機格式錯誤");
+      setHelperText("非暢遊會員,無法登記鎖櫃!");
     }
     if (phone.startsWith("09") && phone.length === 10) {
       jsonphone = phone;
