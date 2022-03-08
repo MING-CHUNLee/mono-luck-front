@@ -35,7 +35,7 @@ function App() {
           <Stack direction="row" spacing={2}>
             <Button
               variant="contained"
-              style={{ width: 380, height: 36 }}
+              style={{ width: 380, height: 36, background: "#02A2EE" }}
               onClick={handleClick}
             >
               完成

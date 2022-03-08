@@ -17,7 +17,7 @@
 }
 
 .SidebarText p {
-  margin: 0px;
+  margin: 15px auto;
 }
 
 .Sidebar a {
@@ -39,4 +39,8 @@
 
 .titletext {
   margin: 15px 0;
+}
+.link > div:hover {
+  background: #e1f4fd;
+  color: #02a2ee;
 }

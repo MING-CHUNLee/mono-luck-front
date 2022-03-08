@@ -40,7 +40,7 @@ export default function TemporaryDrawer() {
   const [btnbg2, setBtnBg2] = React.useState("#FFF");
   const titleMap = [
     { path: "/", title: "首頁" },
-    { path: "/Luck", title: "鎖櫃登記" },
+    { path: "/Luck", title: "置物櫃登記" },
     { path: "/Complete", title: "登記成功" },
     { path: "/Inquiry", title: "查詢登記" },
     { path: "/Noyetopen", title: "查詢登記" },
@@ -52,7 +52,7 @@ export default function TemporaryDrawer() {
     if (curTitle && curTitle.title) {
       setDrawerText(curTitle.title);
       document.title = curTitle.title;
-      if (curTitle.title === "鎖櫃登記") {
+      if (curTitle.title === "置物櫃登記") {
         setBtnBg1("#E1F4FD");
         setBtnBg2("#FFF");
         setBtnColor1("#02A2EE");
@@ -105,14 +105,14 @@ export default function TemporaryDrawer() {
         <Link to="/Luck" className="link">
           <ListItem
             button
-            key={"鎖櫃登記"}
+            key={"置物櫃登記"}
             style={{ background: btnbg1, color: btncolor1 }}
             onClick={changeColor1}
           >
             <ListItemIcon>
               <EditIcon />
             </ListItemIcon>
-            <ListItemText primary={"鎖櫃登記"} />
+            <ListItemText primary={"置物櫃登記"} />
           </ListItem>
         </Link>
 
@@ -136,7 +136,7 @@ export default function TemporaryDrawer() {
   return (
     <div className="appbar">
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" style={{ background: "#02A2EE" }}>
           <Toolbar variant="dense" style={{ padding: "0" }}>
             <Button
               onClick={toggleDrawer("left", true)}

@@ -8,6 +8,8 @@
   width: 350px;
   max-width: 100vw;
   background-color: #fff;
+  width: 100vw;
+  max-width: 350px;
 }
 
 .Logo {
@@ -41,4 +43,15 @@ p {
 
 button {
   max-width: 100vw;
+}
+
+.button_r {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 350px;
+}
+
+.dialog {
+  text-align: center;
+  width: 100%;
 }

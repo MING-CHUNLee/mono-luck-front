@@ -3,14 +3,27 @@
 }
 
 .Inquiry {
+  margin: 0 10px;
   text-align: center;
   width: 380px;
   margin: 0 auto;
 }
 
-.searchArea {
-  padding-top: 60px;
-}
 .Done {
   margin-top: 30px;
+}
+
+.searchArea {
+  margin: 50px 0 0 0;
+}
+.searchArea > * > div {
+  width: 100%;
+  max-width: 380px;
+}
+.Done button {
+  width: 100%;
+  max-width: 380px;
+}
+.Done > div {
+  margin: 0 auto;
 }
