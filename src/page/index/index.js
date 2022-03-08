@@ -54,7 +54,7 @@ function Homepage() {
                   onClick={(e) => {
                     handleClick(e);
                   }}
-                  style={{ background: "#02A2EE" }}
+                  style={{ background: "#02A2EE", boxShadow: "none" }}
                 >
                   <EditIcon />
                   開始登記

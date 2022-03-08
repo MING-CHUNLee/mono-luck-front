@@ -1,10 +1,34 @@
 import React from "react";
 import "./inquiry.css";
-import { Button, Stack } from "@mui/material";
+import { styled, Button, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 import axios from "../../axios.config";
+
+const CssTextField = styled(TextField)({
+  "& .MuiFormHelperText-root": {
+    "&.Mui-focused": {
+      //提示文字
+      color: "#02A2EE",
+    },
+  },
+  "& label.Mui-focused": {
+    //上排文字
+    color: "#02A2EE",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "grey",
+    },
+    "&:hover fieldset": {
+      borderColor: "black",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#02A2EE", //FIELD 框
+    },
+  },
+});
 
 function App() {
   const navigate = useNavigate();
@@ -22,7 +46,7 @@ function App() {
       .then((response) => {
         if (
           response.data ===
-          "目前鎖櫃尚在登記中，<br>請在 12/12 AM 10 回來本系統查看中籤資訊"
+          "置物櫃尚在登記，請於 03/14 中午 12:00 至本系統查詢抽籤結果。"
         ) {
           navigate("/Noyetopen");
         } else {
@@ -51,7 +75,7 @@ function App() {
             noValidate
             autoComplete="off"
           >
-            <TextField
+            <CssTextField
               id="outlined-helperText"
               label="手機號碼"
               error={error}
@@ -66,7 +90,12 @@ function App() {
             <Stack direction="row" spacing={2}>
               <Button
                 variant="contained"
-                style={{ width: 380, height: 40, background: "#02A2EE" }}
+                style={{
+                  width: 380,
+                  height: 40,
+                  background: "#02A2EE",
+                  boxShadow: "none",
+                }}
                 onClick={handleClick}
               >
                 完成

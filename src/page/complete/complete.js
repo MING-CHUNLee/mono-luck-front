@@ -22,13 +22,7 @@ function App() {
             <p>登記成功</p>
           </div>
           <div className="completeContent">
-            <p>
-              鎖櫃抽選時間為
-              <br />
-              10:00 a.m 12/12
-              <br />
-              抽籤資訊將會公告至本系統
-            </p>
+            <p>請於 03/14 中午 12:00 至本系統查詢抽籤結果。</p>
           </div>
         </div>
         <div class="button">

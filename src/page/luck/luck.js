@@ -31,12 +31,12 @@ const CssTextField = styled(TextField)({
   "& .MuiFormHelperText-root": {
     "&.Mui-focused": {
       //提示文字
-      color: "#1976d2",
+      color: "#02A2EE",
     },
   },
   "& label.Mui-focused": {
     //上排文字
-    color: "#1976d2",
+    color: "#02A2EE",
   },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
@@ -46,7 +46,7 @@ const CssTextField = styled(TextField)({
       borderColor: "black",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "#1976d2", //FIELD 框
+      borderColor: "#02A2EE", //FIELD 框
     },
   },
 });
@@ -97,7 +97,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (checkBoxCheck === false) {
-      setColor("#02A2EE");
+      setColor("#B00020");
     }
     if (phone === "" || phone.length !== 10) {
       setError(true);
@@ -686,7 +686,7 @@ function App() {
           <div className="chip">
             <div className="choosenum">
               <div className="num">
-                <p>選擇鎖櫃:</p>
+                <p>選擇置物櫃:</p>
 
                 <Paper
                   sx={{
@@ -817,7 +817,12 @@ function App() {
                     variant="contained"
                     type="submit"
                     value="submit"
-                    style={{ width: 380, height: 40, background: "#02A2EE" }}
+                    style={{
+                      width: 380,
+                      height: 40,
+                      background: "#02A2EE",
+                      boxShadow: "none",
+                    }}
                     onClick={handleClick}
                   >
                     <p>送出</p>

@@ -43,6 +43,7 @@
   text-align: left;
   font-weight: bold;
   max-width: 100%;
+  margin-left: -5px;
 }
 
 /* .choosenum .num::after {
@@ -60,7 +61,7 @@
 .textfield,
 .textfield form,
 .textfield > * > div {
-  margin: 24px auto 0 auto;
+  margin: 10px auto 0 auto;
   width: 380px;
   max-width: 100%;
 }
@@ -79,11 +80,6 @@
   align-items: center;
   justify-content: flex-start;
   max-width: 100%;
-  font-size: 14px;
-}
-
-.itemLeft {
-  margin-right: -10px;
 }
 
 .agreeItem p {
@@ -93,7 +89,7 @@
 
 .agreeItem a,
 .disagreeItem a {
-  font-size: 16px;
+  font-size: 14px;
   color: #1976d2;
 }
 
@@ -128,7 +124,7 @@
   overflow: auto;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   max-width: 100%;
 }
 
@@ -172,6 +168,7 @@
   width: 100%;
   max-width: 380px;
   margin: 0 auto;
+  padding-top: 30px;
 }
 .content {
   margin: 0 10px;
