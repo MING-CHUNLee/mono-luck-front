@@ -22,6 +22,7 @@ function App() {
                   width: 380,
                   height: 40,
                   background: "#02A2EE",
+                  boxShadow: "none",
                 }}
                 onClick={handleClick}
               >
