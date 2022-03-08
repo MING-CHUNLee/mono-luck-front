@@ -136,7 +136,10 @@ export default function TemporaryDrawer() {
   return (
     <div className="appbar">
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" style={{ background: "#02A2EE" }}>
+        <AppBar
+          position="static"
+          style={{ background: "#02A2EE", boxShadow: "none" }}
+        >
           <Toolbar variant="dense" style={{ padding: "0" }}>
             <Button
               onClick={toggleDrawer("left", true)}

@@ -44,13 +44,10 @@ function App() {
     axios
       .post("api/Locker", JSON.parse(json))
       .then((response) => {
-        if (
-          response.data ===
-          "置物櫃尚在登記，請於 03/14 中午 12:00 至本系統查詢抽籤結果。"
-        ) {
+        if (response.data == "0") {
           navigate("/Noyetopen");
         } else {
-          if (response.data === "您尚未登記過鎖櫃") {
+          if (response.data == "1") {
             setError(true);
             setHelperText("您尚未登記過鎖櫃");
           } else {

@@ -22,6 +22,7 @@ import {
   Chip,
   styled,
 } from "@mui/material";
+import { type } from "@testing-library/user-event/dist/type";
 
 const ChipListItem = styled("li")(({ theme }) => ({
   margin: theme.spacing(0.5),
@@ -94,36 +95,44 @@ function App() {
     console.log(chipToDelete);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (checkBoxCheck === false) {
-      setColor("#B00020");
-    }
-    if (phone === "" || phone.length !== 10) {
-      setError(true);
-      setHelperText("非暢遊會員,無法登記鎖櫃!");
-    }
-  };
-
-  console.log(phone);
-
   const checkboxChange = () => {
     setCheckBoxCheck(!checkBoxCheck);
     if (checkBoxCheck === false) {
       setColor("#6d6d6d");
     }
   };
-  const handleClick = (event) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let jsonphone;
+    if (checkBoxCheck === false) {
+      setColor("#B00020");
+    }
+    if (
+      !(phone.startsWith("09") && phone.length === 10) &&
+      !(phone.startsWith("8869") && phone.length === 12)
+    ) {
+      setError(true);
+      setHelperText("手機格式錯誤");
+    }
+    if (phone.startsWith("09") && phone.length === 10) {
+      jsonphone = phone;
+    }
+    if (phone.startsWith("8869") && phone.length === 12) {
+      jsonphone = "0" + phone.slice(3);
+      setPhone(jsonphone);
+    }
+
     if (checknum.length === 0) {
       setDialogOpen(true);
     }
     if (
-      checkBoxCheck === true &&
-      phone !== "" &&
-      phone.length === 10 &&
-      !isNaN(phone)
+      checkBoxCheck !== false &&
+      jsonphone.startsWith("09") &&
+      jsonphone.length === 10 &&
+      checknum.length !== 0
     ) {
-      event.preventDefault();
+      e.preventDefault();
       let priority = "";
       let cnt = 1;
       devices.forEach(function (i) {
@@ -141,7 +150,7 @@ function App() {
       //     priority += devices[i] + ",";
       //   }
       // }
-      const json = JSON.stringify({ phone: phone, priority: priority });
+      const json = JSON.stringify({ phone: jsonphone, priority: priority });
 
       //console.log("phone:" + phone +"number:" + devices);
       axios
@@ -164,6 +173,7 @@ function App() {
         });
     }
   };
+
   return (
     <div id="LUCK">
       <div className="Table">
@@ -823,7 +833,6 @@ function App() {
                       background: "#02A2EE",
                       boxShadow: "none",
                     }}
-                    onClick={handleClick}
                   >
                     <p>送出</p>
                   </Button>

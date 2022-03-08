@@ -178,3 +178,7 @@
   text-align: center;
   width: 100%;
 }
+
+.itemLeft {
+  margin-right: -10px;
+}

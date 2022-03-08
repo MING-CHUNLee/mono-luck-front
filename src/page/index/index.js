@@ -63,7 +63,11 @@ function Homepage() {
             </Stack>
             <Stack direction="row" spacing={2}>
               <Link to="/Inquiry" className="link">
-                <Button variant="outlined" className="button_r">
+                <Button
+                  variant="outlined"
+                  className="button_r"
+                  style={{ color: "#02A2EE" }}
+                >
                   <SearchIcon />
                   登記查詢
                 </Button>
