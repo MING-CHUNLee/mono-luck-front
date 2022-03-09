@@ -45,19 +45,6 @@
   max-width: 100%;
   margin-left: -5px;
 }
-
-/* .choosenum .num::after {
-  content: "";
-  position: absolute;
-  background-color: #cfcfcf;
-  height: 1px;
-  margin-top: 50px;
-  left: calc(50% - 190px);
-}
-  max-width: 350px;
-  margin: 90px auto 0 auto;
-} */
-
 .textfield,
 .textfield form,
 .textfield > * > div {
@@ -103,6 +90,7 @@
   margin-top: 20px;
   margin-bottom: 56px;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .sendBtn {
@@ -121,7 +109,6 @@
 }
 
 .toggleBtn {
-  overflow: auto;
   text-align: center;
   margin-top: 30px;
   margin-bottom: 10px;

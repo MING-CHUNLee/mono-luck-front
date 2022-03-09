@@ -32,6 +32,9 @@ function Homepage() {
     }
   };
 
+  const handleClickLink = () => {
+    navigate("/Inquiry");
+  };
   return (
     <div id="HOME">
       <div className="Homepage">
@@ -43,7 +46,7 @@ function Homepage() {
             <p>MonoLuck</p>
           </div>
           <div className="Title2">
-            <p>鎖櫃登記系統</p>
+            <p>會員置物櫃登記系統</p>
           </div>
         </div>
 
@@ -56,23 +59,32 @@ function Homepage() {
                 onClick={(e) => {
                   handleClick(e);
                 }}
-                style={{ background: "#02A2EE", boxShadow: "none" }}
+                style={{
+                  background: "#02A2EE",
+                  boxShadow: "none",
+                  width: 380,
+                  height: 40,
+                }}
               >
                 <EditIcon />
                 開始登記
               </Button>
             </Stack>
             <Stack direction="row" spacing={2}>
-              <Link to="/Inquiry" className="link">
-                <Button
-                  variant="outlined"
-                  className="button_r"
-                  style={{ color: "#02A2EE" }}
-                >
-                  <SearchIcon />
-                  登記查詢
-                </Button>
-              </Link>
+              <Button
+                variant="outlined"
+                className="button_r"
+                onClick={handleClickLink}
+                style={{
+                  color: "#02A2EE",
+                  boxShadow: "none",
+                  width: 380,
+                  height: 40,
+                }}
+              >
+                <SearchIcon />
+                登記查詢
+              </Button>
             </Stack>
           </Stack>
         </div>

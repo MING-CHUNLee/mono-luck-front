@@ -51,7 +51,6 @@ function App() {
     }
     if (phone.startsWith("8869") && phone.length === 12) {
       jsonphone = "0" + phone.slice(3);
-      setPhone(jsonphone);
     }
     if (jsonphone.startsWith("09") && jsonphone.length === 10) {
       e.preventDefault();
@@ -105,6 +104,8 @@ function App() {
               value={phone}
               onChange={(e) => {
                 setPhone(e.target.value.replace(/[^\d.]/g, ""));
+                setError(false);
+                setHelperText("請輸入您的手機號碼");
               }}
             />
           </Box>

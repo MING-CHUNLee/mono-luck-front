@@ -25,16 +25,23 @@ function App() {
             <p>請於 03/14 中午 12:00 至本系統查詢抽籤結果。</p>
           </div>
         </div>
-        <div class="button">
-          <Stack direction="row" spacing={2}>
-            <Button
-              variant="contained"
-              style={{ width: 380, height: 36, background: "#02A2EE" }}
-              onClick={handleClick}
-            >
-              完成
-            </Button>
-          </Stack>
+        <div className="done">
+          <div className="button">
+            <Stack direction="row" spacing={2}>
+              <Button
+                variant="contained"
+                style={{
+                  width: 380,
+                  height: 40,
+                  background: "#02A2EE",
+                  boxShadow: "none",
+                }}
+                onClick={handleClick}
+              >
+                完成
+              </Button>
+            </Stack>
+          </div>
         </div>
       </div>
     </div>

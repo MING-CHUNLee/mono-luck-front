@@ -14,22 +14,22 @@ function App() {
       <div className="Notyetopen">
         <div className="notyetopenText">
           <p>置物櫃尚在登記，請於 03/14 中午 12:00 至本系統查詢抽籤結果。</p>
-          <div class="button">
-            <Stack direction="row" spacing={2}>
-              <Button
-                variant="contained"
-                style={{
-                  width: 380,
-                  height: 40,
-                  background: "#02A2EE",
-                  boxShadow: "none",
-                }}
-                onClick={handleClick}
-              >
-                完成
-              </Button>
-            </Stack>
-          </div>
+        </div>
+        <div className="notyetopenbtn">
+          <Stack direction="row" spacing={2}>
+            <Button
+              variant="contained"
+              style={{
+                width: 380,
+                height: 40,
+                background: "#02A2EE",
+                boxShadow: "none",
+              }}
+              onClick={handleClick}
+            >
+              完成
+            </Button>
+          </Stack>
         </div>
       </div>
     </div>

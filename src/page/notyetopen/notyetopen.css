@@ -1,20 +1,37 @@
-.Notyetopen {
-  text-align: center;
+/* .Notyetopen {
   width: 380px;
   margin: 0 auto;
 }
 
 .notyetopenText {
   margin: 30px 0 30px 0;
+  text-align: center;
   padding-top: 70px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .notyetopenText p {
   font-size: 14px;
-  margin: 0 0 30px 0;
+  margin: 0 24px;
   line-height: 1.5em;
 }
 
 #OPEN {
   background-color: #fff;
+} */
+.Notyetopen {
+  text-align: center;
+  margin: 0 24px;
+}
+
+.notyetopenText {
+  margin: 24px;
+  line-height: 1.5em;
+}
+
+.notyetopenbtn > div {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 380px;
 }

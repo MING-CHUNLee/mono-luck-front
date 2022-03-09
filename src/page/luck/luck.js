@@ -120,7 +120,6 @@ function App() {
     }
     if (phone.startsWith("8869") && phone.length === 12) {
       jsonphone = "0" + phone.slice(3);
-      setPhone(jsonphone);
     }
 
     if (checknum.length === 0) {
@@ -756,6 +755,8 @@ function App() {
                   value={phone}
                   onChange={(e) => {
                     setPhone(e.target.value.replace(/[^\d.]/g, ""));
+                    setError(false);
+                    setHelperText("請輸入您的手機號碼");
                   }}
                 />
               </Box>
@@ -815,7 +816,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  新制會員物品管理規範
+                  <font size="3">新制會員物品管理規範</font>
                 </a>
               </div>
             </div>
