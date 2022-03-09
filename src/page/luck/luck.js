@@ -99,6 +99,8 @@ function App() {
     setCheckBoxCheck(!checkBoxCheck);
     if (checkBoxCheck === false) {
       setColor("#6d6d6d");
+    } else {
+      setColor("#B00020");
     }
   };
 
@@ -182,7 +184,9 @@ function App() {
               請點擊欲租借的鎖櫃編號，可選三項，須至少輸入一項，選擇的鎖櫃順序為鎖櫃抽選志願序。
             </p>
           </div>
-
+          <div className="directionsline">
+            <Divider />
+          </div>
           <div className="toggleBtn">
             <div>
               <div className="Btn">
