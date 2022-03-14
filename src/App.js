@@ -6,6 +6,7 @@ import Luckpage from "./page/luck/luck";
 import Complete from "./page/complete/complete";
 import Inquiry from "./page/inquiry/inquiry";
 import Notyetopen from "./page/notyetopen/notyetopen";
+import Result from "./page/result/result";
 import Hamburgar from "./component/hamburgar";
 
 const Layout = (props) => {
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/Complete" element={<Complete />} title="登記成功" />
         <Route path="/Inquiry" element={<Inquiry />} title="查詢登記" />
         <Route path="/Noyetopen" element={<Notyetopen />} title="查詢登記" />
+        <Route path="/Result" element={<Result />} title="查詢登記" />
       </Routes>
     </Router>
   );

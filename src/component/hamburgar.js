@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import EditIcon from "@mui/icons-material/Edit";
 import SearchIcon from "@mui/icons-material/Search";
+import Avatar from "@mui/material/Avatar";
 import { Link, useLocation, useEffect } from "react-router-dom";
 
 export default function TemporaryDrawer() {
@@ -95,7 +96,7 @@ export default function TemporaryDrawer() {
     >
       <List>
         <div className="SidebarImg">
-          <img src="https://imgur.com/PJgYdab.png" alt=""></img>
+          <Avatar alt="memberAvatar" src="https://imgur.com/PJgYdab.png" />
         </div>
         <div className="SidebarText">
           <p className="SidebarTitle">MonoLuck</p>
